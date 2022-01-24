@@ -32,7 +32,7 @@ class CuentaBancaria:
     @classmethod
     def imprimir_cuentas(cls):
         for cuenta in cls.cuentas:
-            cuenta.mostrar_info_cuentas()
+            cuenta.mostrar_info_cuenta()
 
 
 
