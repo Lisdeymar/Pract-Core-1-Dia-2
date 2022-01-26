@@ -34,6 +34,32 @@ class CuentaBancaria:
         for cuenta in cls.cuentas:
             cuenta.mostrar_info_cuenta()
 
+class Usuario:
+
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.cuenta = {
+            "ahorros" : CuentaBancaria(0.01,100),
+            "creditos" : CuentaBancaria(0.02,200)
+        }
+        
+    def mostrar_balance_usuario(self):
+        print(f"Usuario: {self.nombre}, ahorro Balance: {self.cuenta['ahorro'].mostrar_info_cuenta}")
+        print(f"Usuario: {self.nombre}, creditos Balance: {self.cuenta['creditos'].mostrar_info_cuenta)}")
+        return self
+
+    def transfer_money(self,depósito,usuario):
+        self.depósito -= depósito
+        usuario.depósito += depósito
+        self.mostrar_balance_usuario()
+        usuario.mostrar_balance_usuario()
+        return self
+
+
+adrien = Usuario("Adrien")
+
+adrien.cuenta['checking'].depósito(100)
+adrien.mostrar_balance_usuario()
 
 
 

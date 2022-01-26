@@ -1,11 +1,15 @@
-from CuentaBancaria import CuentaBancaria
+from CuentaBancaria import CuentaBancaria, Usuario
 
-alex = CuentaBancaria( 0.01, 100 )
-ana = CuentaBancaria( 0.01, 200 )
+ahorro = CuentaBancaria( 0.01, 100 )
+creditos = CuentaBancaria( 0.02, 200 )
 
-alex.depósito(5).depósito(10).depósito(20).retiro(30).generar_interés().mostrar_info_cuenta()
-ana.depósito(200).depósito(350).retiro(10).retiro(15).retiro(20).retiro(25).generar_interés().mostrar_info_cuenta()
+ahorro.depósito(5).depósito(10).depósito(20).retiro(30).generar_interés().mostrar_info_cuenta()
+creditos.depósito(200).depósito(350).retiro(10).retiro(15).retiro(20).retiro(25).generar_interés().mostrar_info_cuenta()
 
 CuentaBancaria.imprimir_cuentas()
 
+ana = Usuario("ana")
+
+ana.cuenta['ahorro'].depósito(100)
+ana.mostrar_balance_usuario()
 
